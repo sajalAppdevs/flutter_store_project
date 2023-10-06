@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_store_project/Shop/presentation/widget/bottom_nav.dart';
+import 'package:flutter_store_project/Shop/presentation/pages/body_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -13,15 +13,28 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Flarence",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            fontFamily: "iran_sens",
+        title: GestureDetector(
+          onTap: () {},
+          child: const Text(
+            "Flarence",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              fontFamily: "iran_sens",
+            ),
           ),
         ),
+        actions: [
+          Builder(builder: (BuildContext) {
+            return IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.shopping_cart_rounded,
+                  color: Colors.black,
+                ));
+          })
+        ],
       ),
       drawer: Drawer(
           backgroundColor: Colors.white,
@@ -79,7 +92,7 @@ class _MainPageState extends State<MainPage> {
               )
             ],
           )),
-      body: const BottomNav(),
+      body: const BodyPage(),
     );
   }
 }
